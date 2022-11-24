@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Smythe', sans-serif;
+    line-height: 24px;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    background: #F5F5F5;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header {
+    background-image:
+        url(images/ferks-guare-KEZdWfYD-ow-unsplash\ 1.jpg);
+    color: #FFFFFF;
+    background-size: cover;
+    height: 17rem;
+    margin: 0 auto;
+    width: 60rem;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    font-family: 'Smythe', sans-serif;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+header h1 {
+    font-size: 4rem;
+    line-height: 2.4rem;
+    margin-bottom: 2rem;
+
+}
+
+header p {
+    font-size: 2rem;
+    line-height: 1.4rem;
+}
+
+main {
+    background: #FFFFFF;
+    min-height: 100%;
+    margin: 0 auto;
+    width: 60rem;
+    padding-top: 7rem;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    width: 50.8rem;
+    height: 14rem;
+    margin: 0 auto 4.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.item-inner {
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+}
+
+.item-title {
+    font-size: 2.8rem;
+    line-height: 1.7rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.item-graphic {
+    width: 10rem;
+    height: 8.9rem;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7.8rem;
+    line-height: 9.8rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #000000;
+    opacity: 0.72;  
+    text-align: center;
+}
+
+.item-graphic p {
+    text-align: center;
+    width: 100%;
+}
+
+.item-description {
+    font-size: 1.6rem;
+    color: #8B8B8B;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.item-price {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.add-btn {
+    background-color: #FFFFFF;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1.5px solid #DEDEDE;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 3.2rem;
+    text-align: center;
+    color: #3C3C3C;
+}
