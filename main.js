@@ -5,6 +5,7 @@ import { menuArray } from './data.js';
 // Variables
 
 const order = [];
+const orderForm = document.getElementById("order-form");
 
 // Event Listeners
 
@@ -13,10 +14,20 @@ document.addEventListener("click", function (e) {
         addItem(e.target.dataset.add);
     } else if (e.target.dataset.remove) {
         removeItem(e.target.dataset.remove);
+    } else if (e.target.id == "purchase-btn") {
+        showModal();
+    } else if (e.target.id == "close-modal-btn") {
+        closeModal();
     }
     showOrderSection(order);
     render()
 })
+
+orderForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    renderFinalMsg();
+    closeModal();
+});
 
 // Functions
 
@@ -76,7 +87,6 @@ function addItem(item) {
             order.push(menuItem);
         }
     })
-    console.log(order);
 }
 
 function removeItem(item) {
@@ -87,6 +97,36 @@ function removeItem(item) {
 function showOrderSection(order) {
     let state = (order.length < 1) ? "none" : "flex";
     document.getElementById("checkout-section").style.display = state;
+}
+
+function showModal() {
+    document.getElementById("payment-modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("payment-modal").style.display = "none";
+}
+
+function getOrderData() {
+    const orderFormData = new FormData(orderForm);
+    let name = orderFormData.get("name");
+
+    return name;
+}
+
+function processOrder() {
+    let name = getOrderData();
+
+    let orderedHtml = `
+        <div class="complete-order-msg">
+    <p>Thanks, ${name}! Your order is on its way!</p>
+    </div>
+    `
+    return orderedHtml;
+}
+
+function renderFinalMsg() {
+    document.getElementById("checkout-section").innerHTML = processOrder();
 }
 
 render();
